@@ -39,10 +39,10 @@ const CodeBlock: FC<CodeBlockProps> = memo(({ language, value }) => {
   return (
     <div className="relative w-full font-sans rounded-lg my-4 scrollbar-hide">
       <div className="flex items-center justify-between w-full px-6 py-2 pr-4 rounded-t-lg  border-b border-border">
-        <span className="text-xs lowercase">{language}</span>
+        <span className="text-xs lowercase flex items-center px-2.5 py-1 bg-neutral-300 rounded">{language}</span>
         <button
           onClick={handleCopy}
-          className="flex items-center px-2.5 py-1 text-xs bg-neutral-700 hover:bg-neutral-600 rounded transition-colors font-base"
+          className="flex items-center px-2.5 py-1 text-xs bg-neutral-300 hover:bg-neutral-400 rounded transition-colors font-base"
         >
           {isCopied ? (
             <>
@@ -65,7 +65,7 @@ const CodeBlock: FC<CodeBlockProps> = memo(({ language, value }) => {
         customStyle={{
           margin: 0,
           width: "100%",
-          background: "transparent",
+          background: "#333",
           padding: "1.5rem",
           fontSize: "0.9rem",
           lineHeight: "1.5",
@@ -127,7 +127,7 @@ const MarkdownRenderer: FC<MarkdownRendererProps> = memo(({ message }) => {
     ),
     blockquote: ({ node, ...props }) => (
       <blockquote
-        className="border-l-4 border-neutral-500 pl-4 my-4 italic"
+        className="border-l-4 border-neutral-400 pl-4 my-4 italic"
         {...props}
       />
     ),
@@ -146,7 +146,7 @@ const MarkdownRenderer: FC<MarkdownRendererProps> = memo(({ message }) => {
       if (inline || (!match && !content.includes("\n"))) {
         return (
           <code
-            className="bg-neutral-800 px-2 py-1 rounded-md font-mono text-sm scrollbar-hide"
+            className="bg-neutral-400 px-2 py-1 rounded-md font-mono text-sm scrollbar-hide"
             {...props}
           >
             {content}
@@ -159,20 +159,20 @@ const MarkdownRenderer: FC<MarkdownRendererProps> = memo(({ message }) => {
     table: ({ node, ...props }) => (
       <div className="overflow-x-auto my-4">
         <table
-          className="min-w-full divide-y divide-neutral-700 border border-neutral-700"
+          className="min-w-full divide-y divide-neutral-400 border border-neutral-400"
           {...props}
         />
       </div>
     ),
     th: ({ node, ...props }) => (
       <th
-        className="px-4 py-3 text-left text-sm font-semibold bg-neutral-800 border-b border-neutral-700"
+        className="px-4 py-3 text-left text-sm font-semibold bg-neutral-300 border-b border-neutral-400"
         {...props}
       />
     ),
     td: ({ node, ...props }) => (
       <td
-        className="px-4 py-2 text-sm border-t border-neutral-700"
+        className="px-4 py-2 text-sm border-t border-neutral-400"
         {...props}
       />
     ),
