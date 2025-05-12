@@ -191,7 +191,7 @@ const Chatbot = () => {
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0, position: hasStartedChat ? "fixed" : "relative" }}
-                className="w-full bg-gradient-to-t from-white via-white to-transparent pb-4 pt-6 bottom-0 mt-auto"
+                className="w-full bg-linear-to-t from-white via-white to-transparent pb-4 pt-6 bottom-0 mt-auto"
             >
                 <div className="max-w-3xl mx-auto px-4">
                     <motion.div
@@ -213,7 +213,7 @@ const Chatbot = () => {
                                 }
                             }}
                             data-placeholder="Message..."
-                            className="flex-1 min-h-[36px] overflow-y-auto px-3 py-2 focus:outline-none text-sm bg-background rounded-md empty:before:text-muted-foreground empty:before:content-[attr(data-placeholder)] whitespace-pre-wrap break-words"
+                            className="flex-1 min-h-[36px] overflow-y-auto px-3 py-2 focus:outline-hidden text-sm bg-background rounded-md empty:before:text-muted-foreground empty:before:content-[attr(data-placeholder)] whitespace-pre-wrap break-words"
                             ref={(element) => {
                                 inputRef.current = element;
                                 if (element && !input) {
